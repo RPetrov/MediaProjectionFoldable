@@ -2,6 +2,7 @@
 Applications show problem with mediaProjection on foldable devices 
 
 StackOverflow: https://stackoverflow.com/questions/77237646/android-wrong-image-size-from-mediaprojection-on-foldable-device
+Android issue tracker: https://issuetracker.google.com/issues/303597311
 
 # Steps to reproduce
 1. Get current width and height in Activity:
