@@ -1,6 +1,7 @@
 # MediaProjectionFoldable
-Applications  show problem with mediaProjection on foldable devices 
+Applications show problem with mediaProjection on foldable devices 
 
+StackOverflow: https://stackoverflow.com/questions/77237646/android-wrong-image-size-from-mediaprojection-on-foldable-device
 
 # Steps to reproduce
 1. Get current width and height in Activity:
@@ -10,15 +11,15 @@ Applications  show problem with mediaProjection on foldable devices
 ```
 2. Run Service for mediaProjection:
 ```kotlin
-                val wmc = WindowMetricsCalculator.getOrCreate()
-                val bounds = wmc.computeCurrentWindowMetrics(this).bounds
+   val wmc = WindowMetricsCalculator.getOrCreate()
+   val bounds = wmc.computeCurrentWindowMetrics(this).bounds
 
-                val intent = Intent(this, ScreenCaptureService::class.java)
-                intent.putExtra("RESULT_CODE", resultCode)
-                intent.putExtra("DATA", data)
-                intent.putExtra("W", bounds.width())
-                intent.putExtra("H", bounds.height())
-                startService(intent)
+   val intent = Intent(this, ScreenCaptureService::class.java)
+   intent.putExtra("RESULT_CODE", resultCode)
+   intent.putExtra("DATA", data)
+   intent.putExtra("W", bounds.width())
+   intent.putExtra("H", bounds.height())
+   startService(intent)
 
 ```
 3. Create ScreenCaptureService with mediaProjection:
